@@ -10,12 +10,13 @@ jobs:
     steps:
     - id: s00
     # eunning shell(bash/zsh etc) commd 
-      run: echo "current time in Github $(date)"
+      run: echo "current time in Github $(date), ${GITHUB_OUTPUT}"
     - id: s01
-      run: ls -al
+      run: echo "CUR_DATE=$(date)" >> $GITHUB_OUTPUT
     - id: s02
       #cat /new1/notes.txt
       uses: mscoutermarsh/cowsays-action@v1
       with:
-        text: 'hi'
-        color: 'red'
+        # step - context
+        text: 'hi ${{ steps.s01.outputs.CUR_DATE }}'
+        color: red
