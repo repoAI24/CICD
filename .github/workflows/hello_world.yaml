@@ -14,4 +14,8 @@ jobs:
     - id: s01
       run: ls -al
     - id: s02
-      cat new1/notes.txt
+      #cat /new1/notes.txt
+      uses: mscoutermarsh/cowsays-action@v1
+      with:
+        text: 'hi'
+        color: 'red'
