@@ -1,0 +1,13 @@
+name: hello_world
+
+# trigger
+on:
+- push
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    steps:
+    - id: s00
+    # eunning shell(bash/zsh etc) commd 
+      run: echo "current time in Github $(date)"
